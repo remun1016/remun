@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>서울숲 일기</title>
+
+    <style>
+        /* 초기화 */
+        @font-face {
+    font-family: 'SuseongDotum';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/SuseongDotum.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+        }
+        p{
+            font-family: SuseongDotum;
+            line-height: 30px;
+        }
+            * { 
+                margin: 0; padding: 0;
+                font-family:SuseongDotum;
+            }
+            a { text-decoration: none; }
+            li { list-style: none; }
+        /* 기본 클래스 */
+            .pull-left { float: left; }
+            .pull-right { float:right; }
+    
+        /* 페이지 */
+            body {
+                width: 960px; margin: 0 auto;
+                background: #badebf;
+            }
+    
+            #page-wrapper {
+                background: white;
+                margin: 40px 0; padding: 10px 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+            }
+        /* 헤더 */
+            #main-header { padding: 40px 50px; }
+            .master-title { 
+                font-size: 30px; 
+                color: #181818;
+            }
+            .master-description {
+                font-size: 15px; font-weight: 500;
+                color: #383838;
+            }
+    
+        /* 네비게이션 */
+    
+            #main-navigation {
+                border-top: 1px solid #b0ff88;
+                border-bottom: 1px solid #c4ffaf;
+                margin-bottom: 20px;
+                height: 40px;
+            }
+            
+            .outer-menu-item {
+                float: left;
+                position: relative;
+            }
+            .outer-menu-item:hover {
+                background: rgb(0, 140, 44);
+                color: white
+            }
+    
+            .menu-title {
+                display: block;
+                height: 30px; line-height: 30px;
+                text-align: center;
+                padding: 5px 20px;
+            }
+    
+            .inner-menu {
+                display: none;
+                position: absolute;
+                top: 40px; left: 0;
+                width: 100%;
+    
+                background: white;
+                box-shadow: 0 2px 6px rgba(5, 5, 5, 0.9);
+                z-index: 1000;
+    
+                text-align: center
+            }
+    
+            .inner-menu-item > a {
+                display: block;
+                padding: 5px 10px;
+                color: black
+            }
+    
+            .inner-menu-item > a:hover {
+                background: black;
+                color: white;
+            }
+    
+ 
+    
+        /* 중앙  */
+    
+            /* body 태그의 너비: 960픽셀 */
+            /* #page-wrapper 태그의 padding 속성으로 내용물 너비는 920픽셀 */
+            #content { overflow: hidden; }
+            #main-section {
+                float: left;
+                width: 710px;
+            }
+            #main-aside {
+                float: right;
+                width: 200px;
+            }
+    
+        /* 좌측  */
+    
+            article { 
+                padding: 0 10px 20px 10px;
+                border-bottom: 1px solid #C8C8C8;
+            }
+    
+            .article-header { padding: 20px 0; }
+            .article-title { 
+                font-size: 25px;
+                font-weight: 500; 
+                padding-bottom: 10px;
+            }
+            .article-date { font-size: 13px; }
+            .article-body {
+                font-size: 14px;
+            }
+    
+        /* 우측  */
+    
+            .aside-list { padding: 10px 0 30px 0; }
+            .aside-list > h3 {
+                font-size: 15px;
+                font-weight: 600;
+            }
+            .aside-list li a {
+                margin-left: 8px;
+                font-size: 13px;
+                color: #2d9d00;
+            }
+        </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.outer-menu-item').hover(function () {
+                $(this).find('.inner-menu').show();
+            }, function () {
+                $(this).find('.inner-menu').hide();
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- 주석: 내가 알아두어야할 것들.. 기억해야할 것들.. 메모.. -->
+    <div id="page-wrapper">
+        <header id="main-header">
+            <hgroup>
+                <h1 class="master-title">서울숲 탐방</h1>
+                <h2 class="master-description">서울숲은 문화예술공원, 체험학습원, 생태숲, 습지생태원 네 가지의 특색 있는 공간들로 구성되어 있으며, 한강과 맞닿아 있어 다양한 문화여가공간을 제공합니다.
+                    또한 서울숲공원은 조성부터 프로그램 운영까지 시민의 참여로 이루어진 최초의 공원입니다.</h2>
+            </hgroup>
+        </header>
+        <nav id="main-navigation">
+            <div class="pull-left">
+                <ul class="outer-menu">
+                    <li class="outer-menu-item">
+                        <span class="menu-title">서울숲을 탐방하며</span>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="https://seoulforest.or.kr/info/park-info">숲 안내</a></li>
+                            <li class="inner-menu-item"><a href="https://seoulforest.or.kr/info/facility">대관.촬영 신청</a></li>
+                            <li class="inner-menu-item"><a href="https://seoulforest.or.kr/info/faq">묻고 답하기</a></li>
+                            <li class="inner-menu-item"><a href="https://seoulforest.or.kr/info/map">오시는 길</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="content">
+            <section id="main-section">
+                <article>
+                    <div class="article-header">
+                        <h1 class="article-title">들어가는 길</h1>
+
+                    </div>
+                    <div class="article-body">
+                        <img src="김인의res/사진진1.jpeg" width="400" /> <br>
+                        <p>싱그럽게 서울숲에 들어가자 제일 먼저 보이는 풍경 </p><br>
+                        <img src="김인의res/사진3.jpeg" width="400" /> <br>
+                        <img src="김인의res/사12.jpeg" width="400" /><br>
+                        <p> 첫번째 사진과 건물은 같으나 다른 각도와 배경에서 본 건물</p><br>
+                        <img src="김인의res/사진1.jpeg" width="400" /><br>
+                        
+                    </div>
+                </article>
+                <article>
+                    <div class="article-header">
+                        <h1 class="article-title">눈길을 끌었던</h1>
+                    </div>
+                    <div class="article-body">
+                        <img src="김인의res/사진4.jpeg" width="400" /><br>
+                        <p> 말 동상 </p><br>
+                        <img src="김인의res/사진5.jpeg" width="400" /><br>
+                        <p> 말 엉덩이~~ </p><br>
+                        <img src="김인의res/사6.jpeg" width="400" /><br>
+                        <p>거울 연못</p><br>
+                        <img src="김인의res/사7.jpeg" width="400" /><br>
+                        <p>물만 찍은 것</p><br>
+                        <img src="김인의res/사11.jpeg" width="400" /><br>
+                        <p>찍은 것 중에 제일 잘 찍은 것 같아요</p><br>
+                        <img src="김인의res/사9.jpeg" width="400" /><br>
+                        <p>거울 연못 뒤에있던 작은 물길. 어떤 강아지가 첨벙첨벙하다가 나가는것을 봤는데 너무 귀여웠어요!</p><br>
+                    
+                    </div>
+                </article>
+                <article>
+                    <div class="article-header">
+                        <h1 class="article-title">보았다! </h1>
+                    </div>
+                <div class="article-body">
+                    <img src="김인의res/사8.jpeg" width="400" /><br>
+                    <p> 거울 연못에서 목욕하던 비둘기 </p><br>
+                    <img src="김인의res/사10.jpeg" width="400" /> <br>
+                    <p> 다른 비둘기에게 열심히 구애하던 비둘기. 끝까지 봤었는데 결국 차이더라고요.</p><br>
+                    <img src="김인의res/사13.jpeg" width="400" /><br>
+                    <p> 정체를 알 수 없었던 요상한 풀. 처음 본 풀이었어요. </p><br>
+                    
+                </div>
+            </article>
+            </section>
+            <aside id="main-aside">
+                <div class="aside-list">
+                    <h3>참여하기</h3>
+                    <ul>
+                        <li><a href="https://parks.seoul.go.kr/story/news/detailView.do?searchTp=all&searchWd=&currentPage=1&bIdx=2811">서울숲 가드닝</a></li>
+                        <li><a href="http://parks.seoul.go.kr/story/news/detailView.do?bIdx=2826&searchTp=all&searchWd=%EC%84%9C%EC%9A%B8%EC%88%B2">어린이 프로그램</a></li>
+                        <li><a href="https://seoulforest.or.kr/participation/volunteer">자원봉사</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+        <footer id="main-footer">
+            <a href="#"> 위로가기 </a>
+        </footer>
+    </div>
+</body>
+</html>
